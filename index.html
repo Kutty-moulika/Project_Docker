@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aaradhya Jewels — timeless Indian jewellery for every celebration.">
+<title>Aaradhya Jewels | Indian Jewellery</title>
+<style>
+:root{
+  --wine:#5b1824; --wine2:#7b2635; --gold:#c89b3c; --gold2:#e4c46a;
+  --cream:#fbf7ef; --ivory:#fffdf8; --ink:#2b2020; --muted:#786d6a;
+  --line:#eadfce; --shadow:0 18px 50px rgba(70,35,30,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:var(--ivory);line-height:1.6}
+button,input{font:inherit}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--wine);color:#fff;text-align:center;padding:9px 16px;font-size:12px;letter-spacing:1.5px}
+nav{height:82px;background:rgba(255,253,248,.96);display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.logo{font-size:28px;font-weight:bold;letter-spacing:2px;color:var(--wine)}
+.logo small{display:block;font:10px Arial,sans-serif;letter-spacing:4px;color:var(--gold);text-align:center;margin-top:-5px}
+.navlinks{display:flex;gap:30px;font:13px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase}
+.navlinks a:hover{color:var(--gold)}
+.navactions{display:flex;gap:10px}
+.iconbtn{border:0;background:none;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:18px}
+.iconbtn:hover{background:var(--cream)}
+#bagCount{font:10px Arial,sans-serif;background:var(--wine);color:white;border-radius:20px;padding:2px 6px;position:relative;top:-12px;left:-9px}
+.hero{min-height:650px;display:grid;grid-template-columns:1fr 1fr;background:var(--cream)}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px 10%}
+.eyebrow{font:12px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hero h1{font-size:clamp(46px,6vw,82px);line-height:.98;color:var(--wine);font-weight:500;margin-bottom:24px}
+.hero p{max-width:510px;color:var(--muted);font-size:17px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 25px;border:1px solid var(--wine);background:var(--wine);color:white;font:12px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-2px);background:var(--wine2)}
+.btn.alt{background:transparent;color:var(--wine)}
+.hero-art{min-height:650px;background:
+ radial-gradient(circle at 50% 45%,rgba(228,196,106,.42) 0 7%,transparent 7.3%),
+ radial-gradient(circle at 50% 45%,transparent 0 24%,rgba(200,155,60,.42) 24.2% 24.5%,transparent 24.8%),
+ radial-gradient(circle at 50% 45%,transparent 0 38%,rgba(200,155,60,.25) 38.2% 38.5%,transparent 38.8%),
+ linear-gradient(135deg,#7c2938,#3c101a);
+ position:relative;overflow:hidden}
+.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid rgba(255,236,176,.5);width:320px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%) rotate(45deg);border-radius:48%}
+.hero-art:after{width:220px;height:350px;transform:translate(-50%,-50%) rotate(-45deg)}
+.jewel-orb{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#fff5bb 0 5%,#e2ba4d 7% 15%,#8d5c14 17% 22%,#e9c75e 24% 40%,#8a5512 42% 46%,#d9aa38 48% 70%,#70420c 72%);box-shadow:0 0 55px rgba(239,199,94,.6)}
+.hero-art .spark{position:absolute;color:#ffe7a1;font-size:28px;animation:twinkle 2s infinite}
+.s1{left:20%;top:24%}.s2{right:18%;top:32%;animation-delay:.5s}.s3{left:23%;bottom:22%;animation-delay:1s}.s4{right:22%;bottom:18%;animation-delay:1.5s}
+@keyframes twinkle{50%{opacity:.35;transform:scale(.7)}}
+.section{padding:85px 6%}
+.section-head{text-align:center;margin-bottom:45px}
+.section-head h2{font-size:40px;color:var(--wine);font-weight:500}
+.section-head p{color:var(--muted);margin-top:8px;font:14px Arial,sans-serif}
+.collections{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.collection{height:300px;position:relative;overflow:hidden;background:linear-gradient(145deg,#f2dfb2,#8b5a17);display:flex;align-items:flex-end;padding:25px;color:white}
+.collection:nth-child(2){background:linear-gradient(145deg,#e6d9c8,#5b1824)}
+.collection:nth-child(3){background:linear-gradient(145deg,#f3d9a3,#7a303b)}
+.collection:nth-child(4){background:linear-gradient(145deg,#e8e2d5,#473c35)}
+.collection:before{content:"✦";position:absolute;font-size:180px;opacity:.14;right:-20px;top:20px}
+.collection h3{font-size:25px;position:relative}.collection span{font:11px Arial,sans-serif;letter-spacing:2px;display:block;margin-top:6px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);position:relative;transition:.3s;box-shadow:0 5px 20px rgba(70,35,30,.04)}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.product-img{height:270px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#fffaf0,#f1e2c8);position:relative;overflow:hidden}
+.product-img:before{content:"";width:135px;height:135px;border-radius:50%;border:10px double #c89b3c;box-shadow:0 0 0 8px rgba(200,155,60,.08),0 12px 25px rgba(70,35,30,.12)}
+.product-img:after{content:"✦";position:absolute;font-size:38px;color:#e0ba58}
+.card:nth-child(2) .product-img:before{border-radius:50% 50% 45% 45%;width:155px;height:105px}
+.card:nth-child(3) .product-img:before{width:110px;height:150px;border-radius:50% 50% 35% 35%}
+.card:nth-child(4) .product-img:before{width:150px;height:75px;border-radius:50%}
+.wish{position:absolute;right:12px;top:12px;border:0;background:white;width:34px;height:34px;border-radius:50%;cursor:pointer;box-shadow:0 3px 12px #0001}
+.info{padding:18px}.info h3{font-size:19px;font-weight:500;color:var(--wine)}.info p{font:12px Arial,sans-serif;color:var(--muted);margin:5px 0 12px}.price{font:bold 16px Arial,sans-serif;color:#4c3420}
+.add{float:right;border:0;background:var(--wine);color:white;padding:8px 11px;font:10px Arial,sans-serif;letter-spacing:1px;cursor:pointer}
+.banner{margin:20px 6% 80px;background:var(--wine);color:#fff;padding:45px 8%;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.banner h2{font-size:34px;font-weight:500}.banner p{font:13px Arial,sans-serif;color:#ead8bd;margin-top:5px}
+.banner .btn{background:#e4c46a;color:#3b2020;border-color:#e4c46a}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;background:var(--cream)}
+.story-art{height:420px;background:radial-gradient(circle,#e7c96f 0 4%,transparent 4.5%),radial-gradient(circle at 50% 50%,transparent 0 29%,#c89b3c 29.5% 30%,transparent 30.5%),linear-gradient(145deg,#f7ecd3,#e7d2b4);display:flex;align-items:center;justify-content:center}
+.story-art div{width:190px;height:190px;border:3px solid #a96f19;border-radius:50%;box-shadow:0 0 0 18px #0000,0 0 0 22px #c89b3c33;display:flex;align-items:center;justify-content:center;color:#9a681a;font-size:65px}
+.story h2{font-size:42px;color:var(--wine);font-weight:500;margin-bottom:18px}.story p{color:var(--muted);margin-bottom:15px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}.feature{padding:25px;border-top:1px solid var(--line)}.feature b{display:block;color:var(--wine);font-size:17px;margin:8px}.feature span{font:12px Arial,sans-serif;color:var(--muted)}
+.testimonials{background:var(--cream)}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.quote{background:#fff;padding:28px;border:1px solid var(--line)}.stars{color:var(--gold);letter-spacing:4px}.quote p{margin:15px 0;color:#5f5552;font-style:italic}.quote small{font:11px Arial,sans-serif;color:var(--muted)}
+footer{background:#2b1519;color:#eadbc4;padding:55px 6% 25px}.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px}.footergrid h3{color:#fff;font-size:18px;margin-bottom:15px}.footergrid p,.footergrid a{display:block;font:12px Arial,sans-serif;color:#cdbca9;margin:8px 0}.copyright{text-align:center;border-top:1px solid #55343a;margin-top:40px;padding-top:20px;font:11px Arial,sans-serif;color:#a9928e}
+.modal{display:none;position:fixed;inset:0;background:#16090ccc;z-index:50;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modalbox{background:#fffdf8;width:min(550px,100%);padding:30px;position:relative}.modalbox h2{color:var(--wine);font-weight:500;margin-bottom:15px}.close{position:absolute;right:15px;top:12px;border:0;background:none;font-size:24px;cursor:pointer}.searchbox{display:flex;border:1px solid var(--line);margin:15px 0}.searchbox input{flex:1;border:0;padding:12px;outline:0}.empty{text-align:center;color:var(--muted);font:13px Arial,sans-serif;padding:20px}
+@media(max-width:900px){
+ .navlinks{display:none}.hero{grid-template-columns:1fr}.hero-art{min-height:430px}.collections,.products{grid-template-columns:repeat(2,1fr)}
+ .story{grid-template-columns:1fr}.footergrid{grid-template-columns:1fr 1fr}.quotes{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ nav{height:70px;padding:0 4%}.logo{font-size:23px}.hero-copy{padding:55px 7%}.hero h1{font-size:50px}.hero-art{min-height:350px}
+ .section{padding:60px 5%}.section-head h2{font-size:32px}.collections,.products,.features,.footergrid{grid-template-columns:1fr}.collection{height:230px}.product-img{height:230px}.banner{margin:10px 5% 60px;display:block}.banner .btn{margin-top:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">FREE SHIPPING ON ORDERS ABOVE ₹1,999 &nbsp; • &nbsp; HANDCRAFTED WITH LOVE IN INDIA</div>
+
+<nav>
+  <a href="#" class="logo">AARADHYA <small>JEWELS</small></a>
+  <div class="navlinks">
+    <a href="#collections">Collections</a><a href="#bestsellers">Bestsellers</a>
+    <a href="#story">Our Story</a><a href="#contact">Contact</a>
+  </div>
+  <div class="navactions">
+    <button class="iconbtn" onclick="openSearch()" aria-label="Search">⌕</button>
+    <button class="iconbtn" onclick="openBag()" aria-label="Shopping bag">♧<span id="bagCount">0</span></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">The Art of Indian Adornment</div>
+    <h1>Jewels that<br><i>tell your story.</i></h1>
+    <p>Timeless Indian jewellery inspired by heritage, crafted for modern celebrations. From intimate moments to unforgettable weddings.</p>
+    <div class="cta"><a href="#bestsellers" class="btn">Explore Collection</a><a href="#story" class="btn alt">Discover Our Story</a></div>
+  </div>
+  <div class="hero-art">
+    <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span><span class="spark s4">✧</span>
+    <div class="jewel-orb"></div>
+  </div>
+</section>
+
+<section class="section" id="collections">
+  <div class="section-head"><div class="eyebrow">Curated For You</div><h2>Our Collections</h2><p>Pieces for every mood, moment and celebration.</p></div>
+  <div class="collections">
+    <a class="collection" href="#bestsellers"><div><h3>Bridal</h3><span>FOR YOUR FOREVER DAY</span></div></a>
+    <a class="collection" href="#bestsellers"><div><h3>Temple</h3><span>HERITAGE IN GOLD</span></div></a>
+    <a class="collection" href="#bestsellers"><div><h3>Festive</h3><span>CELEBRATE IN STYLE</span></div></a>
+    <a class="collection" href="#bestsellers"><div><h3>Everyday</h3><span>SUBTLE & TIMELESS</span></div></a>
+  </div>
+</section>
+
+<section class="section" id="bestsellers" style="padding-top:20px">
+  <div class="section-head"><div class="eyebrow">Most Loved</div><h2>Bestsellers</h2><p>Our most-admired pieces, made to be treasured.</p></div>
+  <div class="products">
+    <article class="card">
+      <div class="product-img"><button class="wish" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="info"><h3>Rajwada Rani Haar</h3><p>Bridal • Necklace Set</p><span class="price">₹2,499</span><button class="add" onclick="addBag()">ADD TO BAG</button></div>
+    </article>
+    <article class="card">
+      <div class="product-img"><button class="wish" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="info"><h3>Meenakari Jhumka</h3><p>Festive • Earrings</p><span class="price">₹899</span><button class="add" onclick="addBag()">ADD TO BAG</button></div>
+    </article>
+    <article class="card">
+      <div class="product-img"><button class="wish" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="info"><h3>Temple Lakshmi Haar</h3><p>Temple • Necklace</p><span class="price">₹1,899</span><button class="add" onclick="addBag()">ADD TO BAG</button></div>
+    </article>
+    <article class="card">
+      <div class="product-img"><button class="wish" onclick="this.textContent=this.textContent==='♡'?'♥':'♡'">♡</button></div>
+      <div class="info"><h3>Chandbali Royale</h3><p>Statement • Earrings</p><span class="price">₹1,299</span><button class="add" onclick="addBag()">ADD TO BAG</button></div>
+    </article>
+  </div>
+</section>
+
+<section class="banner">
+  <div><div class="eyebrow" style="color:#e4c46a;margin-bottom:5px">A Little Extra Love</div><h2>10% OFF your first order</h2><p>Use code <b style="color:#fff">WELCOME10</b> at checkout.</p></div>
+  <a class="btn" href="#bestsellers">Shop Now</a>
+</section>
+
+<section class="section story" id="story">
+  <div class="story-art"><div>ॐ</div></div>
+  <div>
+    <div class="eyebrow">Our Story</div>
+    <h2>Rooted in tradition.<br>Made for today.</h2>
+    <p>Aaradhya Jewels celebrates the beauty of Indian craftsmanship through designs that feel both regal and effortless.</p>
+    <p>Every piece is inspired by centuries-old motifs — temple carvings, royal heirlooms, meenakari art and the quiet elegance of everyday Indian adornment.</p>
+    <a href="#contact" class="btn">Know More</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="features">
+    <div class="feature"><div style="font-size:28px">✦</div><b>Handpicked Designs</b><span>Curated with an eye for detail and timeless beauty.</span></div>
+    <div class="feature"><div style="font-size:28px">♢</div><b>Quality You Can Trust</b><span>Beautiful pieces selected for comfort and lasting style.</span></div>
+    <div class="feature"><div style="font-size:28px">♡</div><b>Made With Love</b><span>From our collection to your celebration, with care.</span></div>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <div class="section-head"><div class="eyebrow">Kind Words</div><h2>Loved by You</h2></div>
+  <div class="quotes">
+    <div class="quote"><div class="stars">★★★★★</div><p>“The bridal set looked even more beautiful in person. Everyone at the wedding asked where I got it!”</p><small>— PRIYA, HYDERABAD</small></div>
+    <div class="quote"><div class="stars">★★★★★</div><p>“Elegant, lightweight and so easy to style. The jhumkas have become my favourite pair.”</p><small>— ANANYA, BENGALURU</small></div>
+    <div class="quote"><div class="stars">★★★★★</div><p>“Beautiful packaging and lovely designs. It felt like receiving a little treasure.”</p><small>— MEERA, CHENNAI</small></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footergrid">
+    <div><div class="logo" style="color:#fff">AARADHYA <small>JEWELS</small></div><p style="margin-top:18px">Timeless Indian jewellery for modern celebrations.</p></div>
+    <div><h3>Explore</h3><a href="#collections">Collections</a><a href="#bestsellers">Bestsellers</a><a href="#story">Our Story</a></div>
+    <div><h3>Help</h3><a href="#">Shipping & Returns</a><a href="#">Care Guide</a><a href="#">FAQs</a></div>
+    <div><h3>Get in Touch</h3><p>WhatsApp: +91 98765 43210</p><p>Email: hello@aaradhyajewels.in</p><p>Instagram: @aaradhyajewels</p></div>
+  </div>
+  <div class="copyright">© 2026 Aaradhya Jewels. All rights reserved.</div>
+</footer>
+
+<div class="modal" id="searchModal" onclick="if(event.target===this)closeSearch()">
+  <div class="modalbox"><button class="close" onclick="closeSearch()">×</button><h2>Find Your Jewellery</h2>
+    <div class="searchbox"><input id="searchInput" placeholder="Search jhumka, bridal, temple..." oninput="searchProducts()"></div>
+    <div id="searchResult" class="empty">Try “bridal”, “jhumka” or “temple”.</div>
+  </div>
+</div>
+<div class="modal" id="bagModal" onclick="if(event.target===this)closeBag()">
+  <div class="modalbox"><button class="close" onclick="closeBag()">×</button><h2>Your Bag</h2><div id="bagText" class="empty">Your bag is currently empty.</div><a id="whatsapp" class="btn" style="display:none;width:100%;text-align:center" target="_blank">Order on WhatsApp</a></div>
+</div>
+
+<script>
+let bag=0;
+function addBag(){bag++;document.getElementById('bagCount').textContent=bag;alert('Added to your bag ✨');}
+function openSearch(){document.getElementById('searchModal').classList.add('show');setTimeout(()=>document.getElementById('searchInput').focus(),100)}
+function closeSearch(){document.getElementById('searchModal').classList.remove('show')}
+function openBag(){document.getElementById('bagModal').classList.add('show');document.getElementById('bagText').textContent=bag?`You have ${bag} item${bag>1?'s':''} in your bag. ✨`:'Your bag is currently empty.';document.getElementById('whatsapp').style.display=bag?'block':'none';if(bag)document.getElementById('whatsapp').href='https://wa.me/919876543210?text=Hello%20Aaradhya%20Jewels%2C%20I%20would%20like%20to%20order%20the%20items%20in%20my%20bag.'}
+function closeBag(){document.getElementById('bagModal').classList.remove('show')}
+function searchProducts(){let q=document.getElementById('searchInput').value.toLowerCase(),r=document.getElementById('searchResult');if(!q){r.textContent='Try “bridal”, “jhumka” or “temple”.';return}let items=[['Rajwada Rani Haar','Bridal necklace set'],['Meenakari Jhumka','Festive earrings'],['Temple Lakshmi Haar','Temple necklace'],['Chandbali Royale','Statement earrings']].filter(x=>(x[0]+' '+x[1]).toLowerCase().includes(q));r.innerHTML=items.length?items.map(x=>`<p style="padding:10px;border-bottom:1px solid #eadfce"><b style="color:#5b1824">${x[0]}</b><br><small>${x[1]}</small></p>`).join(''):'No matching pieces found — try another search.'}
+</script>
+</body>
+</html>
